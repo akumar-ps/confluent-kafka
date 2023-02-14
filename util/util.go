@@ -39,3 +39,11 @@ func ReadConfig(configFile string) kafka.ConfigMap {
 	return m
 
 }
+
+func GetEnv(envVariableName string, defaultValue string) string {
+	if value := os.Getenv(envVariableName); value == "" {
+		return defaultValue
+	} else {
+		return value
+	}
+}
